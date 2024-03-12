@@ -1,13 +1,20 @@
 import React, { useRef, useState } from "react";
+import { Navigate } from "react-router-dom";
 import Header from "./Header";
 import { checkValidata } from "../utils/validate";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword,signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../utils/firebase";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+
+  const navigate=useNavigate()
+
+
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
-
+  
+  const name=useRef(null)
   const email = useRef(null);
   const password = useRef(null);
 
@@ -28,6 +35,15 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
+          updateProfile(user, {
+            displayName: name.current.value, photoURL: "https://avatars.githubusercontent.com/u/88720530?v=4"
+          }).then(() => {
+            // profile updated now navigate!
+            navigate('/browser')
+          }).catch((error) => {
+            // an error occurred
+            setErrorMessage(error.message)
+          });
           console.log(user)
         })
         .catch((error) => {
@@ -37,6 +53,20 @@ const Login = () => {
         });
     } else {
       //sign in
+      signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    console.log(user)
+    navigate('/browser')
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // setErrorMessage(errorCode +" "+ errorMessage)
+    setErrorMessage("user not found")
+
+  });
     }
   };
 
@@ -64,6 +94,7 @@ const Login = () => {
         </h1>
         {!isSignInForm && (
           <input
+          ref={name}
             type="text"
             placeholder="Full Name"
             className="p-4 my-4 w-full bg-gray-700"
