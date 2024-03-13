@@ -11,7 +11,6 @@ const Header = () => {
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
-        // Sign-out successful.
         navigate("/");
       })
       .catch((error) => {
