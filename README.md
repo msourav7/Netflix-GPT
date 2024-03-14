@@ -16,6 +16,10 @@
 - Implemented Sign out
 - Update Profile API
 - Fetch from TMDB Movies
+- Bug Fixed:All Navigation will done through Header where onAuthStateChanged is used
+- Bug Fixed: If user is not logged in Redirect it to /browser"login" page and vice versa
+- Unsubscribed to the onAuthStateChanged callback
+- Added hardcoded files to the constants file
 
 
 # Features
