@@ -21,7 +21,7 @@ const Login = () => {
   const handleButtonClick = () => {
     //Validate form data
     const message = checkValidata(email.current.value, password.current.value);
-    console.log(message);
+    // console.log(message);
     setErrorMessage(message); 
     if (message) return;
 
@@ -50,7 +50,7 @@ const Login = () => {
             // an error occurred
             setErrorMessage(error.message)
           });
-          console.log(user)
+          // console.log(user)
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -62,7 +62,7 @@ const Login = () => {
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    console.log(user)
+    // console.log(user)
   })
   .catch((error) => {
     const errorCode = error.code;
