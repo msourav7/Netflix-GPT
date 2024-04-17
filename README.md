@@ -18,7 +18,7 @@
 - Fetch from TMDB Movies
 - Bug Fixed:All Navigation will done through Header where onAuthStateChanged is used
 - Bug Fixed: If user is not logged in Redirect it to /browser"login" page and vice versa
-- Unsubscribed to the onAuthStateChanged callback
+- Unsubscribed to the onAuthStateChanged callback / wehn header component unloads
 - Added hardcoded files to the constants file
 - Register TMDB API & create an app & get access token
 - Get Data from TMDB now playing movies list API

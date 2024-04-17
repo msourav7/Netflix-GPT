@@ -14,7 +14,7 @@ const Header = () => {
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
-        navigate("/");
+        navigate("/"); //you can also remove this nsvigstion from here also cuz same process is don in useffect below     
       })
       .catch((error) => {
         // An error happened.
@@ -44,7 +44,7 @@ const Header = () => {
 
     return () => {
       unsubscribe();
-    }; //unsubscribe whenever onauth.. (component)event unmounts
+    }; //unsubscribe whenever onauth.. (component)event unmounts oir whwn the header component unloads 
   }, []);
 
   return (
