@@ -1,24 +1,27 @@
 import React, { useEffect } from "react";
 import Header from "./Header";
-import useNowPlayingMOvies from '../hooks/useNowPlayingMOvies'
+import useNowPlayingMOvies from "../hooks/useNowPlayingMOvies";
 import MainContainer from "./MainContainer";
 import SecondaryContainer from "./SecondaryContainer";
 import VideoTitle from "./VideoTitle";
+import usePopularMovies from "../hooks/usePopularMovies";
 
 function Browse() {
-useNowPlayingMOvies()
+  //fetching the different types of movies and updating the store
+  useNowPlayingMOvies();
+  usePopularMovies();
   return (
     <div>
       <Header />
-      <MainContainer/>
-      <SecondaryContainer/>
+      <MainContainer />
+      <SecondaryContainer />
     </div>
   );
 }
 
 export default Browse;
 
-// MainContainer 
+// MainContainer
 //  - VideoBaackground
 //  - VideoTitle
 
