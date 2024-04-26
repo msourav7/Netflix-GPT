@@ -11,9 +11,9 @@ const SecondaryContainer = () => {
       {/* moving only movies list to the top to match the lists with upper trailer clip "only the content inside the main div which which is Movielist in below div is only just going up"*/}
       <div className='-mt-40 pl-7 relative z-20'> 
       <MovieList title={"Now Playing"} movies={movies.nowPlayingMovies}/>
-      <MovieList title={"Trending"} movies={movies.nowPlayingMovies}/>
+      <MovieList title={"Top Rated"} movies={movies.topRatedMovies}/>
       <MovieList title={"Popular"} movies={movies.popularMovies}/>
-      <MovieList title={"Upcoming Movies"} movies={movies.nowPlayingMovies}/>
+      <MovieList title={"Upcoming Movies"} movies={movies.upcomingMovies}/>
       <MovieList title={"Horror"} movies={movies.nowPlayingMovies}/>
       </div>
       

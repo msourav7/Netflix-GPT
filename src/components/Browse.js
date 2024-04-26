@@ -5,11 +5,15 @@ import MainContainer from "./MainContainer";
 import SecondaryContainer from "./SecondaryContainer";
 import VideoTitle from "./VideoTitle";
 import usePopularMovies from "../hooks/usePopularMovies";
+import useTopRatedMovies from "../hooks/useTopRatedMovies";
+import useUpcomingMovies from "../hooks/useUpcomingMovies";
 
 function Browse() {
   //fetching the different types of movies and updating the store
   useNowPlayingMOvies();
+  useTopRatedMovies();
   usePopularMovies();
+  useUpcomingMovies();
   return (
     <div>
       <Header />
