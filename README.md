@@ -34,7 +34,8 @@
 - Build MovieList 
 - Build Movie Card
 - Tmdb Image_CDN_URL
-- usePopularMovies custom hook and fetched data from store.movies(because it containe all type of movies)
+- Used custom hooks like usePopularMovies,useTopRatedMovies, etc and fetched data from store.movies(because it containe all type of movies)
+- GPT Search Feature
 
 # Features
 - Login/Sign UP

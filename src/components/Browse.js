@@ -7,6 +7,8 @@ import VideoTitle from "./VideoTitle";
 import usePopularMovies from "../hooks/usePopularMovies";
 import useTopRatedMovies from "../hooks/useTopRatedMovies";
 import useUpcomingMovies from "../hooks/useUpcomingMovies";
+import GptSearch from "./GptSearch";
+import { useSelector } from "react-redux";
 
 function Browse() {
   //fetching the different types of movies and updating the store
@@ -14,11 +16,19 @@ function Browse() {
   useTopRatedMovies();
   usePopularMovies();
   useUpcomingMovies();
+
+  const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
   return (
     <div>
       <Header />
-      <MainContainer />
-      <SecondaryContainer />
+      {showGptSearch ? ( //you can remove paranthesis from here it will also work
+        <GptSearch />
+      ) : (
+        <>
+          <MainContainer />
+          <SecondaryContainer />
+        </>
+      )}
     </div>
   );
 }
