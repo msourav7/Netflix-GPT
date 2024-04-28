@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const gptSlice=createSlice({
     name:"gpt",
     initialState:{
-        showGptSearch:false
+        showGptSearch:false,
+        gptMovies:null,
     },
     reducers:{
         // toggleGptSearchView:(state,action)=>{       // action is not here cuz we are not passing any action here
@@ -11,10 +12,13 @@ const gptSlice=createSlice({
         // }  
         toggleGptSearchView:(state)=>{       // action is not here cuz we are not passing any action here
           state.showGptSearch=!state.showGptSearch;    // toggle mechanism for click on gpt search
+        },
+        addGptMovieResult:(state,action)=>{
+                state.gptMovies=action.payload
         }  
         
     }
 })
 
-export const {toggleGptSearchView}=gptSlice.actions 
+export const {toggleGptSearchView,addGptMovieResult}=gptSlice.actions 
 export default gptSlice.reducer;

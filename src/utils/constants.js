@@ -24,3 +24,7 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "sanskrit", name: "Sanskrit" },
   { identifier: "spanish", name: "Spanish" },
 ];
+
+
+// export const OPENAI_KEY="sk-proj-5IBrpKCCZGtjR67O9PqMT3BlbkFJqzLpn3VYqjcbwBnOqmyn"
+export const OPENAI_KEY="sk-proj-B6QNYrjS27p7JWANCBlRT3BlbkFJWTogEoaUwHZ5O08XCSoK"

@@ -35,7 +35,10 @@
 - Build Movie Card
 - Tmdb Image_CDN_URL
 - Used custom hooks like usePopularMovies,useTopRatedMovies, etc and fetched data from store.movies(because it containe all type of movies)
-- GPT Search Feature
+- GPT Search Page
+- GPY search bar
+- (Bonus)Multi-Language Feature in app
+- Integrate 
 
 # Features
 - Login/Sign UP
