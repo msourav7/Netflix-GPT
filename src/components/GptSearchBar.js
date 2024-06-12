@@ -22,7 +22,7 @@ const GptSearchBar = () => {
     const json=await data.json()
     dispatch(addGptMovieResult(json.results))
     console.log("searchMovieTMDB",json.results)
-    console.log("searchMovieTMDB",json.results[0].original_title)
+    console.log("searchMovieTMDB",json.results?.original_title)   //first get multiple movie name just like its result
     
     // return json.results
   };
