@@ -38,7 +38,13 @@
 - GPT Search Page
 - GPY search bar
 - (Bonus)Multi-Language Feature in app
-- Integrate 
+- Get Open AI Api key
+- Gpt search api call
+- Fetched movie searched form tmdbi
+- Reused MovieList component to make movie suggestion contsiner
+- Memoization
+- Added .env file and also added it in gitignore
+- 
 
 # Features
 - Login/Sign UP
