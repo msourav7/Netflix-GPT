@@ -9,7 +9,7 @@ const SecondaryContainer = () => {
     movies.nowPlayingMovies && (
     <div className=' bg-black'>
       {/* moving only movies list to the top to match the lists with upper trailer clip "only the content inside the main div which which is Movielist in below div is only just going up"*/}
-      <div className='-mt-40 pl-7 relative z-20'> 
+      <div className='mt-0 md:-mt-40 pl-1 md:pl-7 relative z-20'> 
       <MovieList title={"Now Playing"} movies={movies.nowPlayingMovies}/>
       <MovieList title={"Top Rated"} movies={movies.topRatedMovies}/>
       <MovieList title={"Popular"} movies={movies.popularMovies}/>

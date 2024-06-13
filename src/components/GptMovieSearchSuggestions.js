@@ -30,17 +30,17 @@ const GptMovieSearchSuggestions = () => {
 
 
     <div className="p-4 m-4 bg-black text-white bg-opacity-85 min-h-screen overflow-x-hidden">
-      <div className="flex flex-wrap justify-center gap-16">
+      <div className="flex flex-wrap justify-center gap-4 md:gap-16">
         {gpt.map((list) => {
           if (!list.poster_path) return null;
           return (
-            <div key={list.id} className="flex flex-col items-center w-48 mb-0">
+            <div key={list.id} className="flex flex-col items-center w-28 md:w-48 mb-0">
               <img
                 src={`https://image.tmdb.org/t/p/w500${list.poster_path}`}
                 alt={list.title}
-                className="w-full h-auto"
+                className="w-24 md:w-full md:h-auto"
               />
-              <h1 className="py-2 text-left text-lg font-semibold">
+              <h1 className="py-2 text-center md:text-left text-sm md:text-lg font-semibold">
                 {list.title}
               </h1>
             </div>

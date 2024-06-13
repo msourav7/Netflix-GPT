@@ -68,21 +68,21 @@ const GptSearchBar = () => {
   // };
 
   return (
-    <div className="pt-[10%]  flex justify-center ">
+    <div className="pt-[50%] md:pt-[10%]  flex justify-center ">
       <form
-        className=" w-1/2 bg-black grid grid-cols-12"
+        className=" w-full md:w-1/2 bg-black grid grid-cols-12"
         onSubmit={(e) => e.preventDefault()}
       >
         <input
           ref={searchText}
           type="text"
-          className="p-4 m-4 col-span-9"
+          className="m-4 p-2 h-fit col-span-8  md:p-4 md:m-4 md:col-span-9"
           //   placeholder={lang.hindi.gptSearchplaceholder}  earlier we were using these two  {lang.hindi.search} for placeholder and for button
           //in langKey we will get en,hindi,sanaskrit etc dynamically
           placeholder={lang[langKey].gptSearchplaceholder}
         />
         <button
-          className="col-span-3 py-2 px-4 m-4 text-white bg-red-700 rounded-lg "
+          className="py-2 px-4 m-4 col-span-4 md:col-span-3 md:py-2 md:px-4 md:m-4 md:w-auto text-white bg-red-700 rounded-lg "
           // onClick={handleGptSearchClick}
           onClick={searchMovieTMDB}
         >

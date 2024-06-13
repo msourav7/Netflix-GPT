@@ -60,10 +60,11 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between">
-      <img className="w-44" src={LOGO} alt="netflixlogo" />
+    // default ( bg-black)is for mobile sm(if device size is greater then small(tab)) is for tab and md(if device size is greater then medium(desktop)) is for desktop 
+    <div className="absolute w-screen px-5 py-2 md:px-8 md:py-2 bg-gradient-to-b from-black z-10 flex flex-col justify-between md:flex-row">
+      <img className=" w-[9rem] md:w-44 mx-auto md:mx-0" src={LOGO} alt="netflixlogo" />
       {user && (
-        <div className="flex p-2">
+        <div className="items-center  flex p-2 justify-around">
           {showGptSearch && (
             <select
               className="p-2 m-2 bg-gray-700 text-white rounded-lg"
@@ -77,13 +78,14 @@ const Header = () => {
             </select>
           )}
           <button
-            className="py-2 px-4 mx-4 my-2 bg-gray-700 text-white rounded-lg"
+            className="md:py-2 md:px-4 md:mx-4 md:my-2 bg-gray-700 text-white rounded-lg"
+            style={{ width: '121px', height: '39px' }}
             onClick={handleGptSearchClick}
           >
             {showGptSearch?"Home Page": "GPT Search" }
           </button>
-          <img className="w-12 h-12 " src={user?.photoURL} alt="user-icon" />
-          <button onClick={handleSignOut} className="font-bold text-white">
+          <img className="hidden md:block w-25 h-8 md:w-12 md:h-12 " src={user?.photoURL} alt="user-icon" />
+          <button onClick={handleSignOut} className="md:font-bold text-white" style={{width: "108px", fontSize: "smaller"}}>
             (Sign Out)
           </button>
         </div>
